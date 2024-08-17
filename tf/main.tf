@@ -5,4 +5,11 @@ module "gke_cluster" {
   GOOGLE_PROJECT = var.GOOGLE_PROJECT
   GKE_NUM_NODES  = 2
 }
+
+terraform {
+  backend "gcs" {
+    bucket = "tf-storage-test"
+    prefix = "terraform/state"
+  }
+}
   
